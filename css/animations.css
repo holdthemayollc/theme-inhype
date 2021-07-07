@@ -1,0 +1,151 @@
+/*
+* Theme Animations Transitions
+*/
+
+/* Color and background transitions */
+a,
+.btn,
+button,
+input[type="submit"],
+input[type="button"],
+.woocommerce #content input.button,
+.woocommerce #respond input#submit,
+.woocommerce .button,
+.woocommerce-page .button,
+.woocommerce-page input,
+.woocommerce ul.tabs li,
+.woocommerce-page ul.tabs li,
+.woocommerce.widget .product-categories li .cat-menu-close,
+.woocommerce ul.products li.product a h2,
+.widget_layered_nav ul li,
+.widget_meta ul li,
+.widget_archive ul li,
+.widget_categories ul li,
+.widget_pages ul li,
+body .owl-theme .owl-controls .owl-page span,
+body .owl-theme .owl-dots .owl-dot span,
+body .owl-theme .owl-controls .owl-nav div.owl-prev:hover,
+body .owl-theme .owl-controls .owl-nav div.owl-next:hover,
+.navigation-post .nav-post-name,
+.navigation-post .nav-post-button-title,
+.sidebar .widget.widget_inhype_posts_slider .widget-post-slider-wrapper .widget-post-details-wrapper,
+.sidebar .widget.widget_inhype_categories .inhype-image-wrapper.with-bg .post-categories-overlay,
+.sidebar .widget.widget_inhype_categories .inhype-post .post-categories-image,
+.sidebar .widget.widget_inhype_categories .post-categories .post-category,
+.inhype-featured-categories-wrapper .inhype-featured-category .inhype-featured-category-overlay,
+.woocommerce-mini-cart,
+.single-post .post-worthreading-post-container .btn-close {
+    -webkit-transition: color 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+    transition: color 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+/* Opacity transitions */
+.header-menu .menu-top-menu-container-toggle,
+body .owl-theme .owl-controls,
+body .owl-theme .owl-controls .owl-nav div,
+.search-close-btn,
+.single-post #post-sidebar > li.widget:last-child,
+.inhype-featured-categories-wrapper .inhype-featured-category-bg,
+.sidebar .widget.widget_inhype_categories .inhype-post .post-categories-bg {
+    -webkit-transition: opacity 0.25s ease;
+    transition: opacity 0.25s ease;
+}
+
+/* All transitions */
+.scroll-to-top,
+#sb_instagram .sbi_photo_wrap .sbi_photo,
+.single-post .inhype-social-share-fixed,
+.post-social-wrapper .post-social-frame,
+.inhype-overlay-post.inhype-post .post-details-bottom.post-details-bottom-inline,
+.inhype-overlay-post.inhype-post .inhype-post-details-inner,
+.navbar .nav > li,
+.inhype-fullwidthpostsslider-block-pagination .inhype-fullwidthpostsslider-page {
+	-webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}
+
+/*  All transitions - slow */
+header .search-toggle-wrapper .searchform,
+.inhype-post .inhype-post-details {
+	-webkit-transition: all 0.45s ease;
+    transition: all 0.45s ease;
+}
+
+/* Images hover effects transitions */
+.blog-enable-images-animations .inhype-post-image-wrapper .inhype-post-image,
+.blog-enable-images-animations .inhype-image-wrapper .inhype-post-image,
+.blog-enable-images-animations .inhype-post-image-wrapper .inhype-post-image::before,
+.blog-enable-images-animations .inhype-image-wrapper .inhype-post-image::before {
+	-webkit-transition: transform 0.2s ease, opacity 0.45s ease;
+	transition: transform 0.2s ease, opacity 0.45s ease;
+}
+.blog-enable-images-animations .inhype-post-image-wrapper .inhype-post-image::after,
+.blog-enable-images-animations .inhype-image-wrapper .inhype-post-image::after {
+	-webkit-transition: all 0.25s ease;
+	transition: all 0.25s ease;
+}
+
+/* Worth reading post block transition */
+.post-worthreading-post-container,
+.post-worthreading-post-wrapper .post-worthreading-post-button {
+	-webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+/* WC Cart */
+.shopping-cart .shopping-cart-content {
+	-webkit-transition: margin .2s ease-in, opacity .2s ease-in, visibility .2s ease-in;
+	transition: margin .2s ease-in, opacity .2s ease-in, visibility .2s ease-in;
+}
+
+/* Drop down menus transitions */
+@media (min-width: 991px) {
+	/* Main menu */
+	.nav .sub-menu {
+	    display: block;
+	    margin: 0;
+	    transition: margin .2s ease-in,opacity .2s ease-in, transform .2s ease-in, visibility .2s ease-in;
+	    -webkit-transition: margin .2s ease-in,opacity .2s ease-in, transform .2s ease-in, visibility .2s ease-in;
+
+	    opacity: 0;
+	    visibility: hidden;
+	}
+	.nav li:hover > .sub-menu {
+	    display: block;
+
+	    opacity: 1;
+	    visibility: visible;
+	}
+	.nav .sub-menu > li > .sub-menu {
+		margin-top: -16px;
+	}
+	.nav .sub-menu > li:hover > .sub-menu {
+		right: -101%;
+		margin-top: -16px;
+	}
+
+	/* Top menu */
+	.header-menu .sub-menu {
+	    display: block;
+	    margin-top: 0;
+	    opacity: 0;
+	    transition: margin .2s ease-in,opacity .2s ease-in, transform .2s ease-in, visibility .2s ease-in;
+	    -webkit-transition: margin .2s ease-in,opacity .2s ease-in, transform .2s ease-in, visibility .2s ease-in;
+
+	    opacity: 0;
+	    visibility: hidden;
+	}
+	.header-menu li:hover > .sub-menu {
+	    display: block;
+	    opacity: 1;
+	    margin-top: 0;
+
+	    opacity: 1;
+	    visibility: visible;
+	}
+	.header-menu .sub-menu > li > .sub-menu {
+		margin-top: 0;
+	}
+	.header-menu .sub-menu > li:hover > .sub-menu{
+		right: -99.5%;
+	}
+}

@@ -1,0 +1,61 @@
+<?php
+/**
+ * Post template: Overlay short for Fullwidth slider block with boxed text container
+ */
+
+?>
+<?php
+
+$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'source');
+
+if(has_post_thumbnail( $post->ID )) {
+    $image_bg ='background-image: url('.esc_url($image[0]).');';
+    $post_class = ' inhype-post-invert';
+}
+else {
+    $image_bg = '';
+    $post_class = ' inhype-post-no-image';
+}
+
+$categories_list = inhype_get_the_category_list( $post->ID );
+
+echo '<div class="inhype-overlay-post inhype-overlay-short-post inhype-post'.esc_attr($post_class).'"'.inhype_add_aos(false).'>';
+
+echo '<div class="inhype-post-wrapper-inner">';
+
+if(has_post_thumbnail( $post->ID )) {
+  echo '<div class="inhype-post-image" data-style="'.esc_attr($image_bg).'"></div>';
+}
+
+// Post details
+echo '
+<div class="inhype-post-details">
+<div class="inhype-post-details-inner">
+<div class="container">
+<div class="post-categories">'.wp_kses($categories_list, inhype_esc_data()).'</div>';
+
+echo '<h3 class="post-title entry-title"><a href="'.esc_url(get_permalink($post->ID)).'">'.wp_kses_post($post->post_title).'</a></h3>';
+
+if(get_theme_mod('blog_posts_author', false)):
+?>
+<div class="post-author">
+    <span class="vcard">
+        <?php echo esc_html__('By', 'inhype'); ?> <span class="fn"><?php echo get_the_author_posts_link(); ?></span>
+    </span>
+</div>
+<div class="post-info-dot"></div>
+<?php endif; ?>
+<div class="post-date"><?php echo inhype_get_post_date($post->ID); ?></div>
+<?php if(get_theme_mod('blog_posts_read_time', false)): ?>
+<div class="post-info-dot"></div>
+<div class="post-read-time"><?php echo inhype_get_post_read_time($post->ID); ?></div>
+<?php endif; ?>
+<?php
+echo '</div>';
+echo '</div>';
+echo '</div>';
+// END - Post details
+
+
+echo '</div>';
+echo '</div>';
